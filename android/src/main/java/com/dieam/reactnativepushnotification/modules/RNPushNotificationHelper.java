@@ -37,10 +37,10 @@ public class RNPushNotificationHelper {
     public static final String PREFERENCES_KEY = "rn_push_notification";
     private static final long DEFAULT_VIBRATION = 300L;
     
-    private static final String NOTIFICATION_CHANNEL_ID = "rn-push-notification-channel-id";
+    private static final String NOTIFICATION_CHANNEL_ID = "Order-notification-id";
     private static String NOTIFICATION_CHANNEL_ID_TMP = null;
     
-    private static final CharSequence NOTIFICATION_CHANNEL_NAME = "rn-push-notification-channel";
+    private static final CharSequence NOTIFICATION_CHANNEL_NAME = "Order-notification";
     private static CharSequence NOTIFICATION_CHANNEL_NAME_TMP = null;
 
     private Context context;
@@ -173,7 +173,7 @@ public class RNPushNotificationHelper {
                     .setContentTitle(title)
                     .setTicker(bundle.getString("ticker"))
                     .setVisibility(NotificationCompat.VISIBILITY_PRIVATE)
-                    .setPriority(NotificationCompat.PRIORITY_HIGH)
+                    .setPriority(NotificationCompat.PRIORITY_MAX)
                     .setAutoCancel(bundle.getBoolean("autoCancel", true));
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) { // API 26 and higher
